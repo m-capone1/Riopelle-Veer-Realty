@@ -11,11 +11,11 @@ export default function Footer() {
         },
         {
             title: 'Office Locations',
-            links: ['Buy', 'Buy', 'Buy', 'Buy', 'Buy'],
+            links: ['COLLINGWOOD', 'THORNBURY', 'STAYNER'],
         },
         {
             title: 'Contact Us',
-            links: ['Buy', 'Buy', 'Buy', 'Buy', 'Buy'],
+            links: ['MARY RIOPELLE', 'MARK VEER', 'KATE VEER', 'CORI WOOLLEY'],
         },
     ];
 
