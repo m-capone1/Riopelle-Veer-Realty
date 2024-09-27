@@ -1,10 +1,13 @@
 "use client";
 
 import Image from 'next/image';
-import { useState } from 'react';
+import LogoBlack from 'next/image';
+
+import { useEffect, useState } from 'react';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const menuContents = ['HOME', 'OUR PROPERTIES', 'BUY', 'SELL', 'RESOURCES', 'AREA GUIDE', 'CONTACT US']
 
@@ -12,17 +15,44 @@ export default function Header() {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const handleScroll = () => {
+        if(window.scrollY > 150) {
+            setIsScrolled(true);
+        }
+
+        if(window.scrollY < 150) {
+            setIsScrolled(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [])
+
     return (
         <>
-            <header className="flex fixed top-0 left-0 w-full bg-transparent text-white p-4 z-20">
+            <header className={`flex fixed top-0 left-0 w-full p-4 z-20 transition-all duration-1000 ease-in-out ${isScrolled ? "bg-white text-black shadow-md" : "bg-transparent text-white"}`}>
                 <div className="h-auto w-1/3 md:w-1/3 lg:w-1/5">
-                    <Image
-                        src="/images/logo.png"
-                        alt="Logo"
-                        width={200}
-                        height={100}
-                        priority
-                    />
+                    {isScrolled ? 
+                        <LogoBlack 
+                            src="/images/logo-black.png"
+                            alt="Logo"
+                            width={200}
+                            height={100}
+                            priority
+                        /> :
+                        <Image
+                            src="/images/logo.png"
+                            alt="Logo"
+                            width={200}
+                            height={100}
+                            priority
+                        />
+                    }
                 </div>
                 <section className='flex flex-1 justify-end items-center'>
                     <div className="lg:flex m:text-sm lg:text-sm gap-4">
@@ -51,7 +81,7 @@ export default function Header() {
                     {menuContents.map((item, index)=>(
                         <a href="#" key={index} className="hover:text-blue-500">{item}</a>
                     ))}
-                    <button className='outline outline-2 py-2 rounded'>
+                    <button className='font-bold outline outline-2 py-2 rounded hover:bg-black hover:text-white'>
                         FIND MY DREAM HOME
                     </button>
                 </nav>
