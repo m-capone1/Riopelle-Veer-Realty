@@ -13,7 +13,7 @@ export default function Header() {
     return (
         <>
             <header className="flex fixed top-0 left-0 w-full bg-transparent text-white p-4 z-20">
-                <div className="h-auto w-1/3 md:w-1/3 lg:w-1/6">
+                <div className="h-auto w-1/3 md:w-1/3 lg:w-1/5">
                     <Image
                         src="/images/logo.png"
                         alt="Logo"
@@ -22,15 +22,15 @@ export default function Header() {
                         priority
                     />
                 </div>
-                <section className='flex flex-1 justify-end'>
+                <section className='flex flex-1 justify-end items-center'>
                     <div className="lg:flex m:text-sm lg:text-sm gap-4">
-                        <div className='hidden lg:block text-nowrap hover:text-slate-300 cursor-pointer hover:underline'>HOME</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-300 cursor-pointer hover:underline'>OUR PROPERTIES</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-300 cursor-pointer hover:underline'>BUY</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-300 cursor-pointer hover:underline'>SELL</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-300 cursor-pointer hover:underline'>RESOURCES</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-300 cursor-pointer hover:underline'>AREA GUIDE</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-300 cursor-pointer hover:underline'>CONTACT US</div>
+                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>HOME</div>
+                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>OUR PROPERTIES</div>
+                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>BUY</div>
+                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>SELL</div>
+                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>RESOURCES</div>
+                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>AREA GUIDE</div>
+                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>CONTACT US</div>
                         <div className="flex w-1/2 sm:w-1/5 md:w-1/3 lg:w-1/6">
                             <button onClick={toggleMenu} className="focus:outline-none bg-transparent">
                                 MENU
