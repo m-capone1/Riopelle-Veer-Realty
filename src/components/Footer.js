@@ -1,5 +1,5 @@
 export default function Footer() {
-    // Define the footer sections with titles and links
+
     const footerSections = [
         {
             title: 'Home',
@@ -7,15 +7,15 @@ export default function Footer() {
         },
         {
             title: 'Area Guide',
-            links: ['Buy', 'Buy', 'Buy', 'Buy', 'Buy'], // Replace with actual unique items
+            links: ['THORNBURY', 'LEITH', 'CLARKSBURG', 'COLLINGWOOD', 'CRAIGLEITH', 'THE BLUE MOUNTAINS'],
         },
         {
             title: 'Office Locations',
-            links: ['Buy', 'Buy', 'Buy', 'Buy', 'Buy'], // Replace with actual unique items
+            links: ['Buy', 'Buy', 'Buy', 'Buy', 'Buy'],
         },
         {
             title: 'Contact Us',
-            links: ['Buy', 'Buy', 'Buy', 'Buy', 'Buy'], // Replace with actual unique items
+            links: ['Buy', 'Buy', 'Buy', 'Buy', 'Buy'],
         },
     ];
 

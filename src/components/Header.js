@@ -6,6 +6,8 @@ import { useState } from 'react';
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const menuContents = ['HOME', 'OUR PROPERTIES', 'BUY', 'SELL', 'RESOURCES', 'AREA GUIDE', 'CONTACT US']
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -24,13 +26,9 @@ export default function Header() {
                 </div>
                 <section className='flex flex-1 justify-end items-center'>
                     <div className="lg:flex m:text-sm lg:text-sm gap-4">
-                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>HOME</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>OUR PROPERTIES</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>BUY</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>SELL</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>RESOURCES</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>AREA GUIDE</div>
-                        <div className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>CONTACT US</div>
+                        {menuContents.map((item, index) => (
+                            <div key={index} className='hidden lg:block text-nowrap hover:text-slate-400 cursor-pointer hover:underline'>{item}</div>
+                        ))}
                         <div className="flex w-1/2 sm:w-1/5 md:w-1/3 lg:w-1/6">
                             <button onClick={toggleMenu} className="focus:outline-none bg-transparent">
                                 MENU
@@ -50,13 +48,9 @@ export default function Header() {
                     ✕
                 </button>
                 <nav className="flex flex-col p-6 space-y-4 text-black">
-                    <a href="#" className="hover:text-blue-500">HOME</a>
-                    <a href="#" className="hover:text-blue-500">OUR PROPERTIES</a>
-                    <a href="#" className="hover:text-blue-500">BUY</a>
-                    <a href="#" className="hover:text-blue-500">SELL</a>
-                    <a href="#" className="hover:text-blue-500">RESOURCES</a>
-                    <a href="#" className="hover:text-blue-500">AREA GUIDE</a>
-                    <a href="#" className="hover:text-blue-500">CONTACT US</a>
+                    {menuContents.map((item, index)=>(
+                        <a href="#" key={index} className="hover:text-blue-500">{item}</a>
+                    ))}
                     <button className='outline outline-2 py-2 rounded'>
                         FIND MY DREAM HOME
                     </button>
