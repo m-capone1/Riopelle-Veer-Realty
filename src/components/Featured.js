@@ -1,9 +1,30 @@
+"use client"
+
 import FeaturedImg from 'next/image';
 import Search from 'next/image';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+import HouseCard from './HouseCard';
 
 export default function Featured() {
     const locations = ["THORNBURY", "LEITH", "CLARKSBURG", "COLLINGWOOD", "CRAIGLEIGH", "THE BLUE MOUNTAINS"];
-    
+    const [listings, setListings] = useState([]);
+
+    useEffect(() => {
+        const fetchHouses = async () => {
+            try {
+              const response = await axios.get("https://66f6dc9bb5d85f31a3416723.mockapi.io/Houses");
+              console.log(response.data);
+              setListings(response.data);
+            } catch (error) {
+              console.error('Error fetching houses:', error);
+            }
+          };
+
+          fetchHouses();
+    },[])
+
     return (
     <>
         <section className="flex">
@@ -42,6 +63,19 @@ export default function Featured() {
                     </button>
                 </div>
             </form>
+        </section>
+        <section>
+            {listings.map((listing, index) =>(
+                <HouseCard 
+                    img = {listing.image} 
+                    address={listing.address} 
+                    city={listing.city} 
+                    bedrooms={listing.bedrooms} 
+                    bathrooms={listing.bathrooms} 
+                    sqft={listing.sqft} 
+                    price={listing.price}
+                />
+            ))}
         </section>
       </>
     );
