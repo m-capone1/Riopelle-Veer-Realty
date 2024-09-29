@@ -5,18 +5,18 @@ export default function HouseCard({img, address, city, bedrooms, bathrooms, sqft
     const [showPrice, setShowPrice] = useState(true);
     
     return (
-        <section className="flex flex-col justify-center items-center shadow-md w-4/5 cursor-pointer lg:w-1/4">
+        <section className="flex flex-col shadow-md w-4/5 cursor-pointer lg:w-1/4 rounded">
             <div>
-                <img src={img} alt="house-image" className="relative"></img>
-                <div className="">{price}</div>
+                <img src={img} alt="house-image" className="rounded hover:opacity-95"></img>
             </div>
-            <div>
+            <div className="flex flex-col m-2">
+                <div className="font-bold text-lg">${price}</div>
                 <div>{address}</div>
                 <div>{city}</div>
-                <div className="flex bg:black text-white">
-                    <div>{bedrooms}</div>
-                    <div>{bathrooms}</div>
-                    <div>{sqft}</div>
+                <div className="flex gap-4 my-2 self-center">
+                    <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm" >{bedrooms} bed</div>
+                    <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm">{bathrooms} bath</div>
+                    <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm">{sqft} sqft</div>
                 </div>
             </div>
         </section>
