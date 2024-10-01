@@ -66,9 +66,9 @@ export default function Featured() {
                 </div>
             </section>
 
-            <section className='flex flex-col my-24 justify-center items-center'>
+            <section className='flex flex-col px-4 my-24 justify-center items-center'>
                 <h2 className='text-2xl lg:text-4xl py-4 lg:py-8'>FEATURED LISTINGS</h2>
-                <form className="w-full px-4 lg:px-48">
+                <form className="w-full lg:px-48">
                     <div className='flex gap-2 w-full'>
                         <input 
                             placeholder='Where would you like to look today?'
@@ -84,6 +84,7 @@ export default function Featured() {
                         </button>
                     </div>
                 </form>
+                <p className='text-xs self-start pt-1 text-slate-400 lg:px-48'>Search a Street, City, Province, RP Number or MLS® Number</p>
             </section>
 
             <section className='flex flex-col justify-center items-center gap-8 lg:flex-row lg:flex-wrap'>

@@ -12,12 +12,12 @@ export default function HouseCard({img, address, city, bedrooms, bathrooms, sqft
             <div className="flex flex-col m-2">
                 <div className="font-bold text-lg">${price}</div>
                 <div className="py-2 text-slate-500">{address}, {city}</div>
-                <div className="flex gap-4 my-2 self-center">
-                    <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm" >{bedrooms} bed</div>
-                    <div className="font-bold text-lg">·</div>
-                    <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm">{bathrooms} bath</div>
-                    <div className="font-bold text-lg">·</div>
-                    <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm">{sqft} sqft</div>
+                <div className="flex gap-2 my-2 self-center">
+                    <div className="bg-black rounded-2xl text-white px-4 py-2 text-sm hover:bg-zinc-800" >{bedrooms} bed</div>
+                    <div className="font-bold text-lg self-center">·</div>
+                    <div className="bg-black rounded-2xl text-white px-4 py-2 text-sm hover:bg-zinc-800">{bathrooms} bath</div>
+                    <div className="font-bold text-lg self-center">·</div>
+                    <div className="bg-black rounded-2xl text-white px-4 py-2 text-sm hover:bg-zinc-800">{sqft} sqft</div>
                 </div>
             </div>
         </section>
