@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
-export default function HouseCard({img, address, city, bedrooms, bathrooms, sqft, price}){
+export default function HouseCard({id, img, address, city, bedrooms, bathrooms, sqft, price}){
+    const router = useRouter();
 
-    const [showPrice, setShowPrice] = useState(true);
-    
+    const handleClick = () => {
+        router.push(`/listings/${id}`);
+    }
+
     return (
-        <section className="flex flex-col shadow-md w-4/5 cursor-pointer lg:w-1/4 rounded">
+        <section onClick={handleClick} className="flex flex-col shadow-md w-4/5 cursor-pointer lg:w-1/4 rounded">
             <div>
                 <img src={img} alt="house-image" className="rounded hover:opacity-95"></img>
             </div>

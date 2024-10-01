@@ -90,7 +90,8 @@ export default function Featured() {
             <section className='flex flex-col justify-center items-center gap-8 lg:flex-row lg:flex-wrap'>
                 {currentListings.map((listing, index) => (
                     <HouseCard
-                        key={index} 
+                        key={index}
+                        id={listing.id} 
                         img={listing.image} 
                         address={listing.address} 
                         city={listing.city} 
