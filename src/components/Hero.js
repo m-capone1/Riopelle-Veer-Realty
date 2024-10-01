@@ -3,7 +3,7 @@ export default function Hero() {
     return (
       <div
         className="relative h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/hero2.jpg')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
   

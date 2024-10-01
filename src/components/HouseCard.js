@@ -11,11 +11,12 @@ export default function HouseCard({img, address, city, bedrooms, bathrooms, sqft
             </div>
             <div className="flex flex-col m-2">
                 <div className="font-bold text-lg">${price}</div>
-                <div>{address}</div>
-                <div>{city}</div>
+                <div className="py-2 text-slate-500">{address}, {city}</div>
                 <div className="flex gap-4 my-2 self-center">
                     <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm" >{bedrooms} bed</div>
+                    <div className="font-bold text-lg">·</div>
                     <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm">{bathrooms} bath</div>
+                    <div className="font-bold text-lg">·</div>
                     <div className="bg-black rounded-2xl text-white px-4 py-1 text-sm">{sqft} sqft</div>
                 </div>
             </div>

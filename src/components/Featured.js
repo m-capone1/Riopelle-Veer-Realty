@@ -12,7 +12,7 @@ export default function Featured() {
     const [listings, setListings] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const listingsPerPage = 6;
+    const listingsPerPage = 9;
 
     useEffect(() => {
         const fetchHouses = async () => {
@@ -49,7 +49,7 @@ export default function Featured() {
         <>
             <section className="flex">
                 <FeaturedImg
-                    src="/images/featured.png"
+                    src="/images/featured2.jpg"
                     alt="featured"
                     width={200}
                     height={100}
