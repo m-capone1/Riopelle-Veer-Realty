@@ -61,7 +61,7 @@ export default function Header() {
                         ))}
                         <div className="flex w-1/2 sm:w-1/5 md:w-1/3 lg:w-1/6">
                             <button onClick={toggleMenu} className="focus:outline-none bg-transparent">
-                                MENU
+                                MORE
                             </button>
                         </div>
                     </div>
